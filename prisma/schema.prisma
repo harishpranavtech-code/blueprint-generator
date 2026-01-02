@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Blueprint {
+  id          String   @id @default(cuid())
+  userId      String
+  projectName String
+  idea        String   @db.Text
+  features    Json
+  techStack   Json
+  database    Json
+  roadmap     Json
+  createdAt   DateTime @default(now())
+  isPublic    Boolean  @default(false)
+  shareToken  String?  @unique
+
+  @@index([userId])
+  @@index([shareToken])
+}
