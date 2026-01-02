@@ -155,7 +155,9 @@ ${blueprint.idea}
               disabled={loading}
               className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 disabled:bg-gray-600"
             >
-              {loading ? "Generating..." : "Generate Blueprint"}
+              {loading
+                ? "Generating...This may take some time"
+                : "Generate Blueprint"}
             </button>
 
             {/* RESULT */}
