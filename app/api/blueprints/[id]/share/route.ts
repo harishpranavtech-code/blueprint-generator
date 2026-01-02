@@ -3,6 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 import { nanoid } from "nanoid";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(
   req: Request,
   context: { params: Promise<{ id: string }> }
